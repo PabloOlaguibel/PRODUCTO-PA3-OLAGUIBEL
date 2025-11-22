@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OG Tienda Virtual — Tienda Demo (PA3)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>OG Tienda Virtual</h1>
+      <p class="tag">Carrito demo · Proyecto PA3</p>
+    </div>
+    <nav class="nav">
+      <input id="search" placeholder="Buscar productos..." aria-label="Buscar productos" />
+      <button id="btn-cart" aria-label="Abrir carrito">🛒 <span id="cart-count">0</span></button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <aside class="filters">
+      <h2>Filtros</h2>
+      <div class="filter-group">
+        <label>Categoría</label>
+        <select id="filter-category">
+          <option value="all">Todas</option>
+          <option value="electronica">Electrónica</option>
+          <option value="ropa">Ropa</option>
+          <option value="hogar">Hogar</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Ordenar</label>
+        <select id="sort">
+          <option value="default">Por defecto</option>
+          <option value="price-asc">Precio ↑</option>
+          <option value="price-desc">Precio ↓</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Oferta</label>
+        <button id="offer-btn">Aplicar oferta (función closure)</button>
+      </div>
+      <div class="info">
+        <p><strong>Equipo:</strong> Pablo Saulo Olaguibel Gastelumendi</p>
+        <p><strong>Fecha:</strong> <span id="fecha-entrega"></span></p>
+      </div>
+    </aside>
+
+    <section class="products" id="products"></section>
+  </main>
+
+  <aside id="cart" class="cart" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Carrito</h2>
+      <button id="close-cart" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-summary">
+      <div>Subtotal: <span id="subtotal">0.00</span></div>
+      <div>Impuestos: <span id="tax">0.00</span></div>
+      <div class="total">Total: <span id="total">0.00</span></div>
+      <button id="checkout">Pagar</button>
+    </div>
+  </aside>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button id="modal-close" class="modal-close">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Proyecto PA3 — Diseño Web · OG Tienda Virtual · Entrega</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
